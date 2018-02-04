@@ -23,10 +23,12 @@ module UsNewsRankings
       @pages ||= table_paths.map{ |filepath| UsNewsRankings::Page.new(filepath) }
     end
 
-    CSV_HEADERS = ["rankings_list", "rankings_year", "school_name", "rank"]
-
     def all_tables_valid?
       pages.map{|page| page.table_valid? }.uniq == [true]
+    end
+
+    def rankings_list
+      "todo/todo/my_list"
     end
 
     def data_dir
@@ -42,28 +44,49 @@ module UsNewsRankings
     end
 
     def perform
-      puts "PARSING #{pages.count} TABLES FROM: #{tables_dir}"
       return false unless all_tables_valid?
-
       remove_data_files
+      #puts "PARSING #{pages.count} TABLES FROM: #{tables_dir}"
+      write_json
+      write_csv
+      return true
+    end
 
-      rankings = [
-        {rankings_list: "my_list", rankings_year: 2000, school_name: "xyz", rank: 3},
-        {rankings_list: "my_list", rankings_year: 2000, school_name: "abc", rank: 1},
-        {rankings_list: "my_list", rankings_year: 2000, school_name: "def", rank: 2},
-      ].sort_by{|ranking| ranking[:rank] }
+    # @example
+    # [
+    #   {rankings_list: "my_list", rankings_year: 2000, school_name: "abc", rank: 1},
+    #   {rankings_list: "my_list", rankings_year: 2000, school_name: "def", rank: 2},
+    #   {rankings_list: "my_list", rankings_year: 2000, school_name: "xyz", rank: 3}
+    # ]
+    def rankings
+      @rankings || extract_rankings.sort_by{|ranking| ranking[:rank].to_i }
+    end
 
-      File.open(json_filepath, "w") do |f|
-        f.write(JSON.pretty_generate(rankings))
+    def extract_rankings
+      rankings = []
+      pages.each do |page|
+        page.table_rows.each do |row|
+          ranking = UsNewsRankings::Ranking.new(list: rankings_list, year: rankings_year, row: row)
+          rankings << ranking.to_h if ranking.ranked?
+        end
       end
+      return rankings
+    end
 
-      CSV.open(csv_filepath, "w", :write_headers=> true, :headers => CSV_HEADERS) do |csv|
+    def write_csv
+      headers = rankings.first.keys.map{|k| k.to_s} #> ["rankings_list", "rankings_year", "school_name", "rank"]
+
+      CSV.open(csv_filepath, "w", :write_headers=> true, :headers => headers) do |csv|
         rankings.each do |ranking|
           csv << ranking.values
         end
       end
+    end
 
-      return true
+    def write_json
+      File.open(json_filepath, "w") do |f|
+        f.write(JSON.pretty_generate(rankings))
+      end
     end
 
     def remove_data_files

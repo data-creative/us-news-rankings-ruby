@@ -1,20 +1,374 @@
 [
   {
-    "rankings_list": "my_list",
-    "rankings_year": 2000,
-    "school_name": "abc",
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Georgetown University",
     "rank": 1
   },
   {
-    "rankings_list": "my_list",
-    "rankings_year": 2000,
-    "school_name": "def",
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "George Washington University",
     "rank": 2
   },
   {
-    "rankings_list": "my_list",
-    "rankings_year": 2000,
-    "school_name": "xyz",
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Fordham University",
     "rank": 3
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "George Mason University",
+    "rank": 4
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "University of Maryland (Carey)",
+    "rank": 4
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "American University (Washington)",
+    "rank": 6
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Temple University (Beasley)",
+    "rank": 6
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "University of Houston",
+    "rank": 6
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Loyola Marymount University",
+    "rank": 9
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "University of Denver (Sturm)",
+    "rank": 10
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Georgia State University",
+    "rank": 11
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "University of Connecticut",
+    "rank": 11
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Lewis & Clark College (Northwestern)",
+    "rank": 11
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "University of San Diego",
+    "rank": 14
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Loyola University Chicago",
+    "rank": 14
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Brooklyn Law School",
+    "rank": 16
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Texas A&M University",
+    "rank": 16
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Rutgers, The State University of New Jersey",
+    "rank": 16
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "University of NevadaLas Vegas",
+    "rank": 19
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Yeshiva University (Cardozo)",
+    "rank": 19
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Seattle University",
+    "rank": 21
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Illinois Institute of Technology (Chicago-Kent)",
+    "rank": 22
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Seton Hall University",
+    "rank": 22
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "New York Law School",
+    "rank": 24
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "St. Louis University",
+    "rank": 24
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "The Catholic University of America",
+    "rank": 24
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Suffolk University",
+    "rank": 24
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Stetson University",
+    "rank": 24
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "DePaul University",
+    "rank": 29
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "University of Baltimore",
+    "rank": 29
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "University of HawaiiManoa (Richardson)",
+    "rank": 29
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Santa Clara University",
+    "rank": 32
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Indiana UniversityIndianapolis (McKinney)",
+    "rank": 32
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "University of the Pacific (McGeorge)",
+    "rank": 34
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Wayne State University",
+    "rank": 34
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "St. John's University",
+    "rank": 36
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Florida International University",
+    "rank": 37
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Chapman University (Fowler)",
+    "rank": 38
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Michigan State University",
+    "rank": 38
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Mitchell Hamline School of Law",
+    "rank": 38
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "University of ArkansasLittle Rock (Bowen)",
+    "rank": 38
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Southwestern Law School",
+    "rank": 38
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "University of San Francisco",
+    "rank": 43
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Cleveland State University (Cleveland-Marshall)",
+    "rank": 44
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Duquesne University",
+    "rank": 44
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "University of Toledo",
+    "rank": 44
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Hofstra University (Deane)",
+    "rank": 44
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "University of MissouriKansas City",
+    "rank": 48
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Quinnipiac University",
+    "rank": 48
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Loyola University New Orleans",
+    "rank": 50
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "University of Akron",
+    "rank": 50
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Pace University (Haub)",
+    "rank": 52
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Touro College (Fuchsberg)",
+    "rank": 52
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Widener University Delaware",
+    "rank": 54
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "CUNY",
+    "rank": 55
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Nova Southeastern University (Broad)",
+    "rank": 55
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Golden Gate University",
+    "rank": 57
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "New England Law Boston",
+    "rank": 57
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Western New England University",
+    "rank": 57
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "Widener University (Commonwealth)",
+    "rank": 57
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "St. Mary's University",
+    "rank": 61
+  },
+  {
+    "rankings_list": "todo/todo/my_list",
+    "rankings_year": 2017,
+    "school_name": "The John Marshall Law School",
+    "rank": 61
   }
 ]
