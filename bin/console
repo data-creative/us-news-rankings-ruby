@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "us_news_rankings"
+require "pry"
+
+Pry.start
