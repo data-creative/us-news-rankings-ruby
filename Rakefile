@@ -21,10 +21,5 @@ end
 task :transform_tables do
   table_files = Dir.glob("web/rankings/education/**/*table*.html")
   puts "EXTRACTING RANKINGS DATA FROM #{table_files.count} HTML TABLES"
-
-  table_files.each do |table_filepath|
-    puts table_filepath
-    table = UsNewsRankings::Table.new(table_filepath)
-    table.parse
-  end
+  # todo
 end

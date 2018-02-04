@@ -11,8 +11,12 @@ module UsNewsRankings
 
     def valid?
       return false unless filename.include?("page")
-      return false unless table.class == Nokogiri::XML::Element
+      return false unless table_valid?
       return true
+    end
+
+    def table_valid?
+      table.class == Nokogiri::XML::Element ? true : false
     end
 
     # @return [Nokogiri::HTML::Document]

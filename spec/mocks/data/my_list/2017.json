@@ -1,0 +1,20 @@
+[
+  {
+    "rankings_list": "my_list",
+    "rankings_year": 2000,
+    "school_name": "abc",
+    "rank": 1
+  },
+  {
+    "rankings_list": "my_list",
+    "rankings_year": 2000,
+    "school_name": "def",
+    "rank": 2
+  },
+  {
+    "rankings_list": "my_list",
+    "rankings_year": 2000,
+    "school_name": "xyz",
+    "rank": 3
+  }
+]
