@@ -5,7 +5,7 @@ module UsNewsRankings
   class Page
     attr_reader :filepath, :table_filepath
 
-    # @param [String] filepath to a rankings page, (e.g. path/to/page1.html).
+    # @param filepath [String] to a rankings page, (e.g. path/to/page1.html).
     def initialize(filepath)
       @filepath = filepath
     end

@@ -5,7 +5,7 @@ module UsNewsRankings
   class TableParser
     attr_reader :tables_dir
 
-    # @param [String] tables_dir a directory containing multiple HTML files comprising a related set of rankings tables. files can be full pages or just <table> elements.
+    # @param tables_dir [String] a directory containing multiple HTML files comprising a related set of rankings tables. files can be full pages or just <table> elements.
     def initialize(tables_dir)
       @tables_dir = tables_dir
     end
@@ -28,7 +28,7 @@ module UsNewsRankings
     end
 
     def rankings_list
-      "todo/todo/my_list"
+      "todo/todo/my_list" # TODO: parse filepath or pass via initializer
     end
 
     def data_dir

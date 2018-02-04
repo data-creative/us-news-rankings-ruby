@@ -9,6 +9,7 @@ RSpec.describe UsNewsRankings::TableParser, type: :job do
     before(:each) do
       job.remove_data_files
       allow(job).to receive(:data_dir).and_return(data_dir)
+      allow(job).to receive(:rankings_list).and_return("education/grad-school/law-part-time")
       job.perform
     end
 
@@ -17,12 +18,69 @@ RSpec.describe UsNewsRankings::TableParser, type: :job do
     #  job.remove_data_files
     #end
 
-    it "should extract rankings data from multiple tables" do
+    it "should extract rankings data in CSV and JSON format from multiple tables" do
       expect(csv_filepath).to eql(job.csv_filepath)
       expect(File.exist?(csv_filepath)).to eql(true)
 
       expect(json_filepath).to eql(json_filepath)
       expect(File.exist?(json_filepath)).to eql(true)
+    end
+
+    describe "CSV data" do
+      let(:csv_file){ CSV.read(csv_filepath, headers: true) }
+
+      it "should have a row per ranked school" do
+        expect(csv_file.count).to eql(62)
+      end
+
+      it "should contain the expected rankings" do
+        expect(csv_file.entries.first.to_h).to eql({
+          "rankings_list"=>"education/grad-school/law-part-time",
+          "rankings_year"=>"2017",
+          "school_name"=>"Georgetown University",
+          "school_city"=>"Washington, DC",
+          "rank"=>"1",
+          "tie"=>"false",
+          "score"=>"100",
+          "peer_score"=>"4.2",
+          "lsat_25th"=>"157",
+          "lsat_75th"=>"168",
+          "acceptance_rate"=>"0.058",
+          "enrollment"=>"242"
+        })
+      end
+    end
+
+    describe "JSON data" do
+      let(:json_file){ File.read(json_filepath) }
+      let(:rankings_json){ JSON.parse(json_file) }
+
+      it "should contain metadata" do
+        expect(rankings_json.keys.include?("rankings_list")).to eql(true)
+        expect(rankings_json.keys.include?("rankings_year")).to eql(true)
+      end
+
+      it "should contain a rankings array with an object per school" do
+        expect(rankings_json.keys.include?("rankings")).to eql(true)
+        expect(rankings_json["rankings"].count).to eql(25)
+      end
+
+      it "should contain the expected rankings" do
+        expect(rankings_json["rankings"].first).to eql({
+          "rankings_list"=>"education/grad-school/law-part-time",
+          "rankings_year"=>"2017",
+          "school_name"=>"Georgetown University",
+          "school_city"=>"Washington, DC",
+          "rank"=>"1",
+          "tie"=>"false",
+          "score"=>"100",
+          "peer_score"=>"4.2",
+          "lsat_25th"=>"157",
+          "lsat_75th"=>"168",
+          "acceptance_rate"=>"0.058",
+          "enrollment"=>"242"
+        })
+      end
     end
   end
 end

@@ -2,7 +2,7 @@ module UsNewsRankings
   class PageParser
     attr_reader :page
 
-    # @param [UsNewsRankings::Page] page
+    # @param page [UsNewsRankings::Page]
     def initialize(page)
       @page = page
     end
