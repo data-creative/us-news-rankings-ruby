@@ -3,7 +3,7 @@ RSpec.describe UsNewsRankings::PageParser, type: :job do
     let(:page_filepath){ "spec/mocks/rankings_page.html" }
     let(:temp_page_filepath){ "spec/mocks/temp_rankings_page.html" }
     let(:temp_table_filepath){ "spec/mocks/temp_rankings_table.html" }
-    let(:page){ UsNewsRankings::RankingsDataPage.new(temp_page_filepath)}
+    let(:page){ UsNewsRankings::Page.new(temp_page_filepath)}
     let(:job){ described_class.new(page)}
 
     before(:each) do
