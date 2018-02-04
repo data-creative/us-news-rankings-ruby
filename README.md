@@ -2,6 +2,8 @@
 
 A third-party interface into public rankings data published by [U.S. News and World Report](https://www.usnews.com/).
 
+[![Build Status](https://travis-ci.org/data-creative/us-news-rankings-ruby.svg?branch=master)](https://travis-ci.org/data-creative/us-news-rankings-ruby)
+
 ## Installation
 
 Add this line to your application's Gemfile:
