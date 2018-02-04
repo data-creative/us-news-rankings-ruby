@@ -7,8 +7,12 @@ module UsNewsRankings
     # @param [String] filepath to a rankings page, (e.g. path/to/page1.html).
     def initialize(filepath)
       @filepath = filepath
-      validates_filename
-      validates_rankings_table
+    end
+
+    def valid?
+      return false unless filename.include?("page")
+      return false unless table.class == Nokogiri::XML::Element
+      return true
     end
 
     # @return [Nokogiri::HTML::Document]
@@ -21,34 +25,25 @@ module UsNewsRankings
       @table ||= (document.at_css("table.ranking-data") || document.at_css("table.searchresult") || document.at_css("table.flex-table"))
     end
 
+    def filename
+      filepath.split("/").last
+    end
+
     def table_filepath
-      filepath.gsub("page", "table")
+      filepath.gsub(filename, filename.gsub("page", "table"))
     end
 
     def year
       filepath.scan(/\d+/).first.to_i
     end
 
-    def list
+    def rankings_list
       path_parts = filepath.split("/")
-      return "#{path_parts[-4]}/#{path_parts[-3]}" #> "grad-schools/law-part-time"
+      return "#{path_parts[-5]}/#{path_parts[-4]}/#{path_parts[-3]}" #> "education/grad-schools/law-part-time"
     end
 
     def parse
-      PageParser.new(self).perform
-    end
-
-    class InvalidNameError < StandardError ; end
-    class InvalidTableError < StandardError ; end
-
-    private
-
-    def validates_filename
-      raise InvalidNameError, filepath unless filepath.include?("page")
-    end
-
-    def validates_rankings_table
-      raise InvalidTableError, filepath unless table.class == Nokogiri::XML::Element
+      PageParser.new(self).perform if valid?
     end
   end
 end

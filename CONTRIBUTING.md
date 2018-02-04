@@ -31,15 +31,15 @@ bin/console
 
 ### Updating Rankings Data
 
-1. Download HTML files into the [archives repo](https://github.com/data-creative/us-news-rankings-archive).
+1. This repo uses a Git submodule to store raw HTML files. When appropriate, download new HTML files into the [archives repo](https://github.com/data-creative/us-news-rankings-archive).
 
-2. Transform source HTML into table elements:
+2. Then transform source HTML into table elements (to be stored in the submodule):
 
 ```sh
 bundle exec rake extract_tables
 ```
 
-2. Transform source HTML into machine-readable data in JSON and CSV format:
+2. Transform source HTML into machine-readable data in JSON and CSV format (to be stored in this repo):
 
 ```sh
 bundle exec rake transform_tables

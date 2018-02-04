@@ -13,12 +13,18 @@ task :extract_tables do
 
   html_files.each do |html_filepath|
     puts html_filepath
+    page = UsNewsRankings::Page.new(html_filepath)
+    puts "...skipping" unless page.parse
+  end
+end
 
-    begin
-      page = UsNewsRankings::Page.new(html_filepath)
-      page.parse
-    rescue UsNewsRankings::Page::InvalidTableError
-      puts "...skipping"
-    end
+task :transform_tables do
+  table_files = Dir.glob("web/rankings/education/**/*table*.html")
+  puts "EXTRACTING RANKINGS DATA FROM #{table_files.count} HTML TABLES"
+
+  table_files.each do |table_filepath|
+    puts table_filepath
+    table = UsNewsRankings::Table.new(table_filepath)
+    table.parse
   end
 end
