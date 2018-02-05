@@ -1,0 +1,65 @@
+rankings_list,rankings_year,school_name,school_city,rank,tie,score,peer_score,lsat_25th,lsat_75th,acceptance_rate,enrollment
+education/grad-schools/law-part-time,2016,Georgetown University,"Washington, DC",1,false,100,4.1,160,167,0.051,241
+education/grad-schools/law-part-time,2016,Fordham University,"New York, NY",2,false,79,3.4,157,163,0.258,195
+education/grad-schools/law-part-time,2016,George Washington University,"Washington, DC",3,false,78,3.4,152,165,0.216,237
+education/grad-schools/law-part-time,2016,George Mason University,"Arlington, VA",4,false,70,2.8,157,162,0.211,155
+education/grad-schools/law-part-time,2016,University of Maryland (Carey),"Baltimore, MD",5,false,66,3.0,152,159,0.279,130
+education/grad-schools/law-part-time,2016,Temple University (Beasley),"Philadelphia, PA",6,true,62,2.7,155,162,0.376,150
+education/grad-schools/law-part-time,2016,University of Connecticut,"Hartford, CT",6,true,62,2.8,152,158,0.371,105
+education/grad-schools/law-part-time,2016,University of Denver (Sturm),"Denver, CO",6,true,62,2.9,154,160,0.484,116
+education/grad-schools/law-part-time,2016,University of Houston,"Houston, TX",6,true,62,2.7,154,162,0.16,126
+education/grad-schools/law-part-time,2016,Southern Methodist University (Dedman),"Dallas, TX",10,false,59,2.6,152,162,0.123,180
+education/grad-schools/law-part-time,2016,American University (Washington),"Washington, DC",11,true,58,2.8,152,157,0.554,236
+education/grad-schools/law-part-time,2016,Loyola Marymount University,"Los Angeles, CA",11,true,58,2.5,155,159,0.303,182
+education/grad-schools/law-part-time,2016,Loyola University Chicago,"Chicago, IL",11,true,58,2.5,153,162,0.409,72
+education/grad-schools/law-part-time,2016,Georgia State University,"Atlanta, GA",14,true,57,2.5,154,159,0.238,178
+education/grad-schools/law-part-time,2016,Lewis & Clark College (Northwestern),"Portland, OR",14,true,57,2.5,152,160,0.5,174
+education/grad-schools/law-part-time,2016,Santa Clara University,"Santa Clara, CA",16,false,56,2.4,153,161,0.519,147
+education/grad-schools/law-part-time,2016,University of San Diego,"San Diego, CA",17,false,54,2.6,153,160,0.343,103
+education/grad-schools/law-part-time,2016,Illinois Institute of Technology (Chicago-Kent),"Chicago, IL",18,true,53,2.6,152,159,0.442,112
+education/grad-schools/law-part-time,2016,University of NevadaLas Vegas,"Las Vegas, NV",18,true,53,2.5,154,161,0.242,103
+education/grad-schools/law-part-time,2016,Brooklyn Law School,"Brooklyn, NY",20,false,52,2.5,153,159,0.356,247
+education/grad-schools/law-part-time,2016,"Rutgers, The State University of New Jersey",,21,false,51,2.6,151,155,0.32,250
+education/grad-schools/law-part-time,2016,St. John's University,"Jamaica, NY",22,false,50,2.2,149,160,0.327,116
+education/grad-schools/law-part-time,2016,Indiana UniversityIndianapolis (McKinney),"Indianapolis, IN",23,true,49,2.4,146,154,0.792,297
+education/grad-schools/law-part-time,2016,Seattle University,"Seattle, WA",23,true,49,2.5,151,157,0.528,151
+education/grad-schools/law-part-time,2016,DePaul University,"Chicago, IL",25,true,48,2.3,149,154,0.495,125
+education/grad-schools/law-part-time,2016,St. Louis University,"St. Louis, MO",25,true,48,2.4,148,157,0.575,77
+education/grad-schools/law-part-time,2016,The Catholic University of America,"Washington, DC",27,false,46,2.2,152,158,0.507,137
+education/grad-schools/law-part-time,2016,Stetson University,"Gulfport, FL",28,true,45,2.2,150,154,0.376,164
+education/grad-schools/law-part-time,2016,Texas A&M; University,"Fort Worth, TX",28,true,45,2.1,153,157,0.185,185
+education/grad-schools/law-part-time,2016,University of HawaiiManoa (Richardson),"Honolulu, HI",28,true,45,2.4,151,158,0.408,73
+education/grad-schools/law-part-time,2016,William Mitchell College of Law*,"St. Paul, MN",28,true,45,2.0,148,156,0.452,363
+education/grad-schools/law-part-time,2016,Wayne State University,"Detroit, MI",32,true,43,2.0,155,160,0.279,51
+education/grad-schools/law-part-time,2016,Yeshiva University (Cardozo),"New York, NY",32,true,43,2.6,152,156,0.495,75
+education/grad-schools/law-part-time,2016,Seton Hall University,"Newark, NJ",34,false,42,2.3,147,156,0.353,172
+education/grad-schools/law-part-time,2016,Quinnipiac University,"Hamden, CT",35,false,41,1.9,149,155,0.557,59
+education/grad-schools/law-part-time,2016,University of Baltimore,"Baltimore, MD",36,true,40,2.1,147,153,0.359,283
+education/grad-schools/law-part-time,2016,University of San Francisco,"San Francisco, CA",36,true,40,2.0,150,153,0.494,97
+education/grad-schools/law-part-time,2016,Cleveland State University (Cleveland-Marshall),"Cleveland, OH",38,true,38,1.9,150,155,0.48,97
+education/grad-schools/law-part-time,2016,New York Law School,"New York, NY",38,true,38,1.9,148,154,0.418,315
+education/grad-schools/law-part-time,2016,Suffolk University,"Boston, MA",38,true,38,1.9,146,156,0.605,393
+education/grad-schools/law-part-time,2016,University of the Pacific (McGeorge),"Sacramento, CA",38,true,38,1.9,147,154,0.62,121
+education/grad-schools/law-part-time,2016,Marquette University,"Milwaukee, WI",42,false,36,2.5,150,155,0.5,76
+education/grad-schools/law-part-time,2016,University of ArkansasLittle Rock (Bowen),"Little Rock, AR",43,false,35,2.1,147,154,0.233,112
+education/grad-schools/law-part-time,2016,Duquesne University,"Pittsburgh, PA",44,true,34,1.9,147,152,0.439,96
+education/grad-schools/law-part-time,2016,Hamline University*,"St. Paul, MN",44,true,34,1.8,149,157,0.519,88
+education/grad-schools/law-part-time,2016,Loyola University New Orleans,"New Orleans, LA",44,true,34,2.1,143,150,0.641,102
+education/grad-schools/law-part-time,2016,Michigan State University,"East Lansing, MI",44,true,34,2.3,144,153,0.581,92
+education/grad-schools/law-part-time,2016,Chapman University (Fowler),"Orange, CA",48,true,33,1.8,151,156,0.252,31
+education/grad-schools/law-part-time,2016,University of Akron,"Akron, OH",48,true,33,1.7,146,154,0.578,145
+education/grad-schools/law-part-time,2016,University of Toledo,"Toledo, OH",50,true,30,1.8,147,152,0.548,56
+education/grad-schools/law-part-time,2016,Widener University,"Wilmington, DE",50,true,30,1.7,147,151,0.441,139
+education/grad-schools/law-part-time,2016,Florida International University,"Miami, FL",52,true,28,1.6,146,155,0.169,107
+education/grad-schools/law-part-time,2016,Nova Southeastern University (Broad),"Fort Lauderdale, FL",52,true,28,1.6,142,151,0.377,187
+education/grad-schools/law-part-time,2016,Golden Gate University,"San Francisco, CA",54,false,27,1.6,143,151,0.561,94
+education/grad-schools/law-part-time,2016,Pace University,"White Plains, NY",55,false,26,1.8,148,151,0.4,62
+education/grad-schools/law-part-time,2016,Oklahoma City University,"Oklahoma City, OK",56,false,25,1.6,146,153,0.776,64
+education/grad-schools/law-part-time,2016,New England Law Boston,"Boston, MA",57,true,24,1.5,146,154,0.698,222
+education/grad-schools/law-part-time,2016,Southwestern Law School,"Los Angeles, CA",57,true,24,1.9,149,153,0.482,318
+education/grad-schools/law-part-time,2016,University of Memphis (Humphreys),"Memphis, TN",57,true,24,1.8,144,149,0.9,23
+education/grad-schools/law-part-time,2016,University of MissouriKansas City,"Kansas City, MO",57,true,24,2.2,0,0,0.435,75
+education/grad-schools/law-part-time,2016,Capital University,"Columbus, OH",61,true,23,1.5,144,153,0.758,155
+education/grad-schools/law-part-time,2016,North Carolina Central University,"Durham, NC",61,true,23,1.6,145,152,0.266,112
+education/grad-schools/law-part-time,2016,University of MassachusettsDartmouth,"North Dartmouth, MA",61,true,23,1.6,147,151,0.51,82
+education/grad-schools/law-part-time,2016,Whittier College,"Costa Mesa, CA",61,true,23,1.4,146,150,0.475,130

@@ -82,4 +82,22 @@ RSpec.describe UsNewsRankings::TableParser, type: :job do
       end
     end
   end
+
+  describe "#rankings_list" do
+    let(:tables_dir){ "web/rankings/education/grad-schools/law-part-time/2012" }
+    let(:job){ described_class.new(tables_dir) }
+
+    it "should detect the list from the directory filepath" do
+      expect(job.rankings_list).to eql("education/grad-schools/law-part-time")
+    end
+  end
+
+  describe "#rankings_year" do
+    let(:tables_dir){ "web/rankings/education/grad-schools/law-part-time/2012" }
+    let(:job){ described_class.new(tables_dir) }
+
+    it "should detect the year from the directory filepath" do
+      expect(job.rankings_year).to eql(2012)
+    end
+  end
 end

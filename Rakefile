@@ -20,6 +20,28 @@ end
 
 task :transform_tables do
   table_files = Dir.glob("web/rankings/education/**/*table*.html")
-  puts "EXTRACTING RANKINGS DATA FROM #{table_files.count} HTML TABLES"
-  # todo
+  #puts "EXTRACTING RANKINGS DATA FROM #{table_files.count} HTML TABLES"
+
+  #dirs = table_files.map{|filepath|
+  #  filepath.split("/")[0..5].join("/") #> "web/rankings/education/colleges/business/2017"
+  #}.uniq
+
+  dirs = [
+    "web/rankings/education/grad-schools/law-part-time/2012",
+    "web/rankings/education/grad-schools/law-part-time/2013",
+    "web/rankings/education/grad-schools/law-part-time/2014",
+    "web/rankings/education/grad-schools/law-part-time/2015",
+    "web/rankings/education/grad-schools/law-part-time/2016",
+  ]
+
+  puts "EXTRACTING RANKINGS DATA FROM #{dirs.count} DIRECTORIES"
+
+  dirs.each do |tables_dir|
+    parser = UsNewsRankings::TableParser.new(tables_dir)
+    begin
+      parser.perform
+    rescue => e
+      puts "... SKIPPING (#{e})"
+    end
+  end
 end
