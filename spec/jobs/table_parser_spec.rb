@@ -1,5 +1,6 @@
 RSpec.describe UsNewsRankings::TableParser, type: :job do
   describe "#perform" do
+    let(:rankings_list){ "education/grad-school/law-part-time" }
     let(:tables_dir){ "./spec/mocks/tables/my_list/2017" }
     let(:data_dir){ "./spec/mocks/data/my_list" }
     let(:json_filepath){ "#{data_dir}/2017.json" }
@@ -9,7 +10,7 @@ RSpec.describe UsNewsRankings::TableParser, type: :job do
     before(:each) do
       job.remove_data_files
       allow(job).to receive(:data_dir).and_return(data_dir)
-      allow(job).to receive(:rankings_list).and_return("education/grad-school/law-part-time")
+      allow(job).to receive(:rankings_list).and_return(rankings_list)
       job.perform
     end
 
@@ -56,29 +57,27 @@ RSpec.describe UsNewsRankings::TableParser, type: :job do
       let(:rankings_json){ JSON.parse(json_file) }
 
       it "should contain metadata" do
-        expect(rankings_json.keys.include?("rankings_list")).to eql(true)
-        expect(rankings_json.keys.include?("rankings_year")).to eql(true)
+        expect(rankings_json["rankings_list"]).to eql(rankings_list)
+        expect(rankings_json["rankings_year"]).to eql(2017)
       end
 
       it "should contain a rankings array with an object per school" do
         expect(rankings_json.keys.include?("rankings")).to eql(true)
-        expect(rankings_json["rankings"].count).to eql(25)
+        expect(rankings_json["rankings"].count).to eql(62)
       end
 
       it "should contain the expected rankings" do
         expect(rankings_json["rankings"].first).to eql({
-          "rankings_list"=>"education/grad-school/law-part-time",
-          "rankings_year"=>"2017",
           "school_name"=>"Georgetown University",
           "school_city"=>"Washington, DC",
-          "rank"=>"1",
-          "tie"=>"false",
-          "score"=>"100",
-          "peer_score"=>"4.2",
-          "lsat_25th"=>"157",
-          "lsat_75th"=>"168",
-          "acceptance_rate"=>"0.058",
-          "enrollment"=>"242"
+          "rank"=>1,
+          "tie"=>false,
+          "score"=>100,
+          "peer_score"=>4.2,
+          "lsat_25th"=>157,
+          "lsat_75th"=>168,
+          "acceptance_rate"=>0.058,
+          "enrollment"=>242
         })
       end
     end

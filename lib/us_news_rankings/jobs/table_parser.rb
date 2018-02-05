@@ -32,7 +32,7 @@ module UsNewsRankings
     end
 
     def data_dir
-      "./data/education/todo/"
+      "./data/#{rankings_list}"
     end
 
     def csv_filepath
@@ -66,7 +66,8 @@ module UsNewsRankings
       rankings = []
       pages.each do |page|
         page.table_rows.each do |row|
-          ranking = UsNewsRankings::Ranking.new(list: rankings_list, year: rankings_year, row: row)
+          #ranking = UsNewsRankings::Ranking.new(list: rankings_list, year: rankings_year, row: row)
+          ranking = UsNewsRankings::Ranking.new(row)
           rankings << ranking.to_h if ranking.ranked?
         end
       end
@@ -75,17 +76,22 @@ module UsNewsRankings
 
     def write_csv
       headers = rankings.first.keys.map{|k| k.to_s} #> ["rankings_list", "rankings_year", "school_name", "rank"]
+      headers = ["rankings_list", "rankings_year"] + headers
 
       CSV.open(csv_filepath, "w", :write_headers=> true, :headers => headers) do |csv|
         rankings.each do |ranking|
-          csv << ranking.values
+          csv << ([rankings_list, rankings_year] + ranking.values)
         end
       end
     end
 
     def write_json
       File.open(json_filepath, "w") do |f|
-        f.write(JSON.pretty_generate(rankings))
+        f.write(JSON.pretty_generate({
+          rankings_list: rankings_list,
+          rankings_year: rankings_year,
+          rankings: rankings
+        }))
       end
     end
 

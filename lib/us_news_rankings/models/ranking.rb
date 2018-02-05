@@ -4,14 +4,21 @@ require 'bigdecimal/util' # enables "".to_d
 
 module UsNewsRankings
   class Ranking
-    attr_reader :list, :year, :row
+    #attr_reader :list, :year, :row
+#
+    ## @param list [String] one of the predefined rankings lists (e.g. "education/grad-school/law-part-time")
+    ## @param year [Integer] the ranking year (e.g. 2017)
+    ## @param row [Nokogiri::XML::Element] a rankings table row ("tr") element
+    #def initialize(list:, year:, row:)
+    #  @list = list
+    #  @year = year
+    #  @row = row
+    #end
 
-    # @param list [String] one of the predefined rankings lists (e.g. "education/grad-school/law-part-time")
-    # @param year [Integer] the ranking year (e.g. 2017)
+    attr_reader :row
+
     # @param row [Nokogiri::XML::Element] a rankings table row ("tr") element
-    def initialize(list:, year:, row:)
-      @list = list
-      @year = year
+    def initialize(row)
       @row = row
     end
 
@@ -51,11 +58,11 @@ module UsNewsRankings
     end
 
     def lsat_25th
-      lsat_combined.split("-").first
+      lsat_combined.split("-").first.to_i
     end
 
     def lsat_75th
-      lsat_combined.split("-").last
+      lsat_combined.split("-").last.to_i
     end
 
     # handles cases when converting to float before dividing produces the wrong output
@@ -70,11 +77,11 @@ module UsNewsRankings
 
     def to_h
       {
-        rankings_list: list,
-        rankings_year: year.to_i,
+        #rankings_list: list,
+        #rankings_year: year.to_i,
         school_name: school_name,
         school_city: school_city,
-        rank: rank.to_i, # assumes numeric_rank? == true
+        rank: rank.to_i, # assumes school is ranked
         tie: tie,
         score: score,
         peer_score: peer_score,
