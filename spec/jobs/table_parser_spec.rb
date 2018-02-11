@@ -14,11 +14,6 @@ RSpec.describe UsNewsRankings::TableParser, type: :job do
       job.perform
     end
 
-    # NOTE: keeping this commented-out for now so I can examine the output files
-    #after(:each) do
-    #  job.remove_data_files
-    #end
-
     it "should extract rankings data in CSV and JSON format from multiple tables" do
       expect(csv_filepath).to eql(job.csv_filepath)
       expect(File.exist?(csv_filepath)).to eql(true)
@@ -28,7 +23,7 @@ RSpec.describe UsNewsRankings::TableParser, type: :job do
     end
 
     describe "CSV data" do
-      let(:csv_file){ CSV.read(csv_filepath, headers: true) }
+      let(:csv_file){ job.csv_file }
 
       it "should have a row per ranked school" do
         expect(csv_file.count).to eql(62)

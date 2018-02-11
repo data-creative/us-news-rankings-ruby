@@ -10,6 +10,64 @@ module UsNewsRankings
       @tables_dir = tables_dir
     end
 
+    def perform
+      return false unless valid?
+      remove_data_files
+      FileUtils.mkdir_p(data_dir)
+      write_data_files
+    end
+
+    # @example [{school_name: "abc", rank: 1}, {school_name: "def", rank: 2}, {school_name: "xyz", rank: 3}]
+    def rankings
+      @rankings || extract_rankings.sort_by{|ranking| ranking[:rank].to_i }
+    end
+
+    def extract_rankings
+      rankings = []
+      puts "PARSING #{pages.count} TABLES FROM: #{tables_dir}"
+      pages.each do |page|
+        page.table_rows.each do |row|
+          #ranking = UsNewsRankings::Ranking.new(list: rankings_list, year: rankings_year, row: row)
+          ranking = UsNewsRankings::Ranking.new(row)
+          rankings << ranking.to_h if ranking.ranked?
+        end
+      end
+      return rankings
+    end
+
+    def remove_data_files
+      FileUtils.rm_rf(csv_filepath)
+      FileUtils.rm_rf(json_filepath)
+    end
+
+    def write_data_files
+      if rankings # prevent from writing empty files
+        write_json
+        write_csv
+      end
+    end
+
+    def write_csv
+      headers = rankings.first.keys.map{|k| k.to_s} #> ["rankings_list", "rankings_year", "school_name", "rank"]
+      headers = ["rankings_list", "rankings_year"] + headers
+
+      CSV.open(csv_filepath, "w", :write_headers=> true, :headers => headers) do |csv|
+        rankings.each do |ranking|
+          csv << ([rankings_list, rankings_year] + ranking.values)
+        end
+      end
+    end
+
+    def write_json
+      File.open(json_filepath, "w") do |f|
+        f.write(JSON.pretty_generate({
+          rankings_list: rankings_list,
+          rankings_year: rankings_year,
+          rankings: rankings
+        }))
+      end
+    end
+
     def rankings_year
       tables_dir.scan(/\d+/).first.to_i
     end
@@ -24,6 +82,10 @@ module UsNewsRankings
 
     def csv_filepath
       File.join(data_dir, "#{rankings_year}.csv")
+    end
+
+    def csv_file
+      @csv_file ||= CSV.read(csv_filepath, headers: true)
     end
 
     def json_filepath
@@ -56,59 +118,6 @@ module UsNewsRankings
 
     def rankings_year_valid?
       rankings_year > 2000
-    end
-
-    def perform
-      return false unless valid?
-      remove_data_files
-      #puts "PARSING #{pages.count} TABLES FROM: #{tables_dir}"
-      FileUtils.mkdir_p(data_dir)
-      write_json
-      write_csv
-      return true
-    end
-
-    # @example [{school_name: "abc", rank: 1}, {school_name: "def", rank: 2}, {school_name: "xyz", rank: 3}]
-    def rankings
-      @rankings || extract_rankings.sort_by{|ranking| ranking[:rank].to_i }
-    end
-
-    def extract_rankings
-      rankings = []
-      pages.each do |page|
-        page.table_rows.each do |row|
-          #ranking = UsNewsRankings::Ranking.new(list: rankings_list, year: rankings_year, row: row)
-          ranking = UsNewsRankings::Ranking.new(row)
-          rankings << ranking.to_h if ranking.ranked?
-        end
-      end
-      return rankings
-    end
-
-    def write_csv
-      headers = rankings.first.keys.map{|k| k.to_s} #> ["rankings_list", "rankings_year", "school_name", "rank"]
-      headers = ["rankings_list", "rankings_year"] + headers
-
-      CSV.open(csv_filepath, "w", :write_headers=> true, :headers => headers) do |csv|
-        rankings.each do |ranking|
-          csv << ([rankings_list, rankings_year] + ranking.values)
-        end
-      end
-    end
-
-    def write_json
-      File.open(json_filepath, "w") do |f|
-        f.write(JSON.pretty_generate({
-          rankings_list: rankings_list,
-          rankings_year: rankings_year,
-          rankings: rankings
-        }))
-      end
-    end
-
-    def remove_data_files
-      FileUtils.rm_rf(csv_filepath)
-      FileUtils.rm_rf(json_filepath)
     end
   end
 end

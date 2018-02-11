@@ -19,20 +19,14 @@ task :extract_tables do
 end
 
 task :transform_tables do
-  table_files = Dir.glob("web/rankings/education/**/*table*.html")
+  #table_files = Dir.glob("web/rankings/education/**/*table*.html")
   #puts "EXTRACTING RANKINGS DATA FROM #{table_files.count} HTML TABLES"
 
   #dirs = table_files.map{|filepath|
   #  filepath.split("/")[0..5].join("/") #> "web/rankings/education/colleges/business/2017"
   #}.uniq
 
-  dirs = [
-    "web/rankings/education/grad-schools/law-part-time/2012",
-    "web/rankings/education/grad-schools/law-part-time/2013",
-    "web/rankings/education/grad-schools/law-part-time/2014",
-    "web/rankings/education/grad-schools/law-part-time/2015",
-    "web/rankings/education/grad-schools/law-part-time/2016",
-  ]
+  dirs = (2012..2017).to_a.map{|rankings_year| "web/rankings/education/grad-schools/law-part-time/#{rankings_year}" }
 
   puts "EXTRACTING RANKINGS DATA FROM #{dirs.count} DIRECTORIES"
 
