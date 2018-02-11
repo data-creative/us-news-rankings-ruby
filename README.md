@@ -29,7 +29,13 @@ Feel free to make client-side requests to the raw JSON or CSV data (e.g. _______
 ### Server-side
 
 ```rb
-top_law_schools = UsNewsRankings::RankingsList.new(year: 2017, list: "education/graduate-schools/law")
+UsNewsRankings::Education::GraduateSchools::Law.new(2017)
+#> [{}, {}, {}]
+
+UsNewsRankings::Education::GraduateSchools::LawPartTime.new(2017)
+#> [{}, {}, {}]
+
+UsNewsRankings::Education::GraduateSchools::LawClinical.new(2017)
 #> [{}, {}, {}]
 ```
 
