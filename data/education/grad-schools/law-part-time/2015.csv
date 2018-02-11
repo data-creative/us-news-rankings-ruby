@@ -1,0 +1,65 @@
+rankings_list,rankings_year,school_name,school_city,rank,tie,score,peer_score,lsat_25th,lsat_75th,acceptance_rate,enrollment
+education/grad-schools/law-part-time,2015,Georgetown University,"Washington, DC",1,false,100,4.0,160,168,0.049,247
+education/grad-schools/law-part-time,2015,George Washington University,"Washington, DC",2,false,86,3.3,150,165,0.293,270
+education/grad-schools/law-part-time,2015,Fordham University,"New York, NY",3,false,82,3.2,157,163,0.242,203
+education/grad-schools/law-part-time,2015,George Mason University,"Arlington, VA",4,false,71,2.7,158,163,0.164,150
+education/grad-schools/law-part-time,2015,University of Maryland (Carey),"Baltimore, MD",5,false,69,2.8,156,162,0.243,150
+education/grad-schools/law-part-time,2015,University of Connecticut,"Hartford, CT",6,false,68,2.8,154,160,0.361,115
+education/grad-schools/law-part-time,2015,Southern Methodist University (Dedman),"Dallas, TX",7,true,65,2.6,153,161,0.186,228
+education/grad-schools/law-part-time,2015,Temple University (Beasley),"Philadelphia, PA",7,true,65,2.7,155,161,0.313,160
+education/grad-schools/law-part-time,2015,Lewis & Clark College (Northwestern),"Portland, OR",9,false,63,2.4,153,161,0.495,188
+education/grad-schools/law-part-time,2015,University of Denver (Sturm),"Denver, CO",10,false,62,2.9,151,160,0.496,138
+education/grad-schools/law-part-time,2015,Loyola Marymount University,"Los Angeles, CA",11,true,60,2.5,154,160,0.169,194
+education/grad-schools/law-part-time,2015,University of Houston,"Houston, TX",11,true,60,2.6,151,159,0.213,117
+education/grad-schools/law-part-time,2015,University of San Diego,"San Diego, CA",13,false,59,2.6,154,162,0.391,108
+education/grad-schools/law-part-time,2015,Georgia State University,"Atlanta, GA",14,true,57,2.4,153,159,0.259,192
+education/grad-schools/law-part-time,2015,Illinois Institute of Technology (Chicago-Kent),"Chicago, IL",14,true,57,2.6,152,160,0.423,107
+education/grad-schools/law-part-time,2015,American University (Washington),"Washington, DC",16,false,55,2.8,152,157,0.436,249
+education/grad-schools/law-part-time,2015,Loyola University Chicago,"Chicago, IL",17,true,53,2.5,150,159,0.376,68
+education/grad-schools/law-part-time,2015,Marquette University,"Milwaukee, WI",17,true,53,2.4,150,161,0.39,93
+education/grad-schools/law-part-time,2015,Brooklyn Law School,"Brooklyn, NY",19,true,52,2.6,152,159,0.323,238
+education/grad-schools/law-part-time,2015,"Rutgers, The State University of New JerseyNewark","Newark, NJ",19,true,52,2.5,150,157,0.324,171
+education/grad-schools/law-part-time,2015,William Mitchell College of Law,"St. Paul, MN",21,false,51,2.1,148,159,0.34,210
+education/grad-schools/law-part-time,2015,University of NevadaLas Vegas,"Las Vegas, NV",22,false,50,2.3,152,157,0.291,106
+education/grad-schools/law-part-time,2015,"Rutgers, The State University of New JerseyCamden","Camden, NJ",23,true,49,2.4,152,156,0.22,85
+education/grad-schools/law-part-time,2015,Seattle University,"Seattle, WA",23,true,49,2.4,150,158,0.524,163
+education/grad-schools/law-part-time,2015,University of Baltimore,"Baltimore, MD",23,true,49,2.2,149,154,0.45,297
+education/grad-schools/law-part-time,2015,Indiana UniversityIndianapolis (McKinney),"Indianapolis, IN",26,true,48,2.4,147,156,0.735,326
+education/grad-schools/law-part-time,2015,Seton Hall University,"Newark, NJ",26,true,48,2.3,148,156,0.356,190
+education/grad-schools/law-part-time,2015,The Catholic University of America,"Washington, DC",26,true,48,2.2,150,155,0.438,164
+education/grad-schools/law-part-time,2015,Stetson University,"Gulfport, FL",29,false,47,2.1,151,158,0.337,198
+education/grad-schools/law-part-time,2015,University of HawaiiManoa (Richardson),"Honolulu, HI",30,false,46,2.3,150,159,0.438,68
+education/grad-schools/law-part-time,2015,St. Louis University,"St. Louis, MO",31,true,45,2.3,150,155,0.451,72
+education/grad-schools/law-part-time,2015,Texas A&M; University,"Fort Worth, TX",31,true,45,2.0,151,155,0.269,244
+education/grad-schools/law-part-time,2015,New York Law School,"New York, NY",33,false,44,2.0,147,152,0.441,308
+education/grad-schools/law-part-time,2015,Southwestern Law School,"Los Angeles, CA",34,false,43,2.0,148,153,0.523,361
+education/grad-schools/law-part-time,2015,DePaul University,"Chicago, IL",35,true,42,2.3,148,155,0.477,120
+education/grad-schools/law-part-time,2015,Santa Clara University,"Santa Clara, CA",35,true,42,2.5,155,160,0.412,165
+education/grad-schools/law-part-time,2015,St. John's University,"Jamaica, NY",35,true,42,2.1,151,158,0.289,122
+education/grad-schools/law-part-time,2015,University of San Francisco,"San Francisco, CA",35,true,42,2.1,152,158,0.459,102
+education/grad-schools/law-part-time,2015,University of the Pacific (McGeorge),"Sacramento, CA",35,true,42,2.1,147,154,0.726,137
+education/grad-schools/law-part-time,2015,Wayne State University,"Detroit, MI",35,true,42,2.0,153,161,0.368,123
+education/grad-schools/law-part-time,2015,Hofstra University (Deane),"Hempstead, NY",41,true,41,2.1,144,156,0.346,24
+education/grad-schools/law-part-time,2015,Loyola University New Orleans,"New Orleans, LA",41,true,41,2.1,150,157,0.435,99
+education/grad-schools/law-part-time,2015,Suffolk University,"Boston, MA",41,true,41,2.1,143,154,0.829,461
+education/grad-schools/law-part-time,2015,Widener University,"Wilmington, DE",44,true,40,1.9,146,152,0.472,255
+education/grad-schools/law-part-time,2015,Yeshiva University (Cardozo),"New York, NY",44,true,40,2.6,153,156,0.53,75
+education/grad-schools/law-part-time,2015,Hamline University,"St. Paul, MN",46,true,38,1.9,149,157,0.631,102
+education/grad-schools/law-part-time,2015,University of ArkansasLittle Rock (Bowen),"Little Rock, AR",46,true,38,2.1,146,152,0.175,118
+education/grad-schools/law-part-time,2015,Duquesne University,"Pittsburgh, PA",48,true,37,1.9,149,154,0.522,114
+education/grad-schools/law-part-time,2015,Michigan State University,"East Lansing, MI",48,true,37,2.3,144,148,0.521,127
+education/grad-schools/law-part-time,2015,Quinnipiac University,"Hamden, CT",48,true,37,2.0,150,153,0.463,59
+education/grad-schools/law-part-time,2015,University of Akron,"Akron, OH",48,true,37,1.8,148,155,0.685,170
+education/grad-schools/law-part-time,2015,Florida International University,"Miami, FL",52,false,36,1.6,150,158,0.177,131
+education/grad-schools/law-part-time,2015,Chapman University (Fowler),"Orange, CA",53,false,35,1.7,152,156,0.23,29
+education/grad-schools/law-part-time,2015,Cleveland State University (Cleveland-Marshall),"Cleveland, OH",54,false,33,1.8,150,156,0.467,91
+education/grad-schools/law-part-time,2015,Pace University,"White Plains, NY",55,true,31,1.9,148,152,0.397,64
+education/grad-schools/law-part-time,2015,The John Marshall Law School,"Chicago, IL",55,true,31,1.8,145,152,0.592,303
+education/grad-schools/law-part-time,2015,University of Toledo,"Toledo, OH",55,true,31,1.8,148,152,0.545,66
+education/grad-schools/law-part-time,2015,Golden Gate University,"San Francisco, CA",58,false,30,1.7,145,151,0.538,148
+education/grad-schools/law-part-time,2015,Oklahoma City University,"Oklahoma City, OK",59,false,29,1.7,145,150,0.737,54
+education/grad-schools/law-part-time,2015,Northern Kentucky University (Chase),"Highland Heights, KY",60,false,28,1.6,145,153,0.645,136
+education/grad-schools/law-part-time,2015,Capital University,"Columbus, OH",61,true,27,1.6,144,151,0.696,184
+education/grad-schools/law-part-time,2015,New England Law Boston,"Boston, MA",61,true,27,1.5,148,153,0.683,255
+education/grad-schools/law-part-time,2015,South Texas College of Law,"Houston, TX",61,true,27,1.6,147,152,0.511,266
+education/grad-schools/law-part-time,2015,University of Detroit Mercy,"Detroit, MI",61,true,27,1.6,143,152,0.521,92

@@ -2,19 +2,22 @@ module UsNewsRankings
   class PageParser
     attr_reader :page
 
-    # @param [UsNewsRankings::Page] page
+    # @param page [UsNewsRankings::Page]
     def initialize(page)
       @page = page
     end
 
     def perform
-      FileUtils.rm_rf(table_filepath)
-
-      File.open(table_filepath, 'w') do |file|
-        file.write(table.to_xhtml(indent: 2))
+      if page.valid?
+        FileUtils.rm_rf(table_filepath)
+        File.open(table_filepath, 'w') do |file|
+          file.write(table.to_xhtml(indent: 2))
+        end
+        FileUtils.rm_rf(page.filepath)
+        return true
+      else
+        return false
       end
-
-      FileUtils.rm_rf(page.filepath)
     end
 
     def table_filepath
