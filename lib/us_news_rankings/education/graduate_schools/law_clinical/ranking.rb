@@ -1,9 +1,10 @@
+require "nokogiri"
+
 module UsNewsRankings
   module Education
     module GraduateSchools
-      class LawPartTime < UsNewsRankings::Category
-        def rankings
-          return [{}, {}, {}]
+      module LawClinical
+        class Ranking < UsNewsRankings::Ranking
         end
       end
     end

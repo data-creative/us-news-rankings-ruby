@@ -1,4 +1,4 @@
-RSpec.describe UsNewsRankings::Education::GraduateSchools::Law do
+RSpec.describe UsNewsRankings::Education::GraduateSchools::LawPartTime::Category do
   describe "#rankings" do
     let(:category){ described_class.new(2017) }
 
