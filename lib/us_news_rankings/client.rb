@@ -9,8 +9,12 @@ module UsNewsRankings
       @year = year
     end
 
+    def annual_list
+      category.namespace.constantize::AnnualList.new(category: category, year: year)
+    end
+
     def rankings
-      category.new(year).rankings
+      annual_list.rankings
     end
   end
 end

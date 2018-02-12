@@ -3,8 +3,15 @@ module UsNewsRankings
     module GraduateSchools
       module Law
         class Category < UsNewsRankings::Category
-          def rankings
-            return [{}, {}, {}]
+          def source_urls
+            return {
+              2017 => [],
+              2016 => [],
+              2015 => [],
+              2014 => [],
+              2013 => [],
+              2012 => []
+            }
           end
         end
       end

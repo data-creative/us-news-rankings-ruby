@@ -1,22 +1,15 @@
-RSpec.describe UsNewsRankings::Education::GraduateSchools::LawClinical::Category do
-  describe "#pages" do
-    let(:category){ described_class.new(2017) }
-
-    it "should return a list of page objects representing source content" do
-      expect(category.pages.count).to eql(1)
-    end
-  end
-
+RSpec.describe UsNewsRankings::Education::GraduateSchools::LawClinical::AnnualList do
   describe "#rankings" do
     describe "for 2017" do
-      let(:category){ described_class.new(2017) }
+      let(:category){ UsNewsRankings::Education::GraduateSchools::LawClinical::Category.new }
+      let(:annual_list){ described_class.new(category: category, year: 2017) }
 
       it "should return a list of ranked schools" do
-        expect(category.rankings.count).to eql(11)
+        expect(annual_list.rankings.count).to eql(11)
       end
 
       it "should contain the expected rankings" do
-        expect(category.rankings.first).to eql({
+        expect(annual_list.rankings.first).to eql({
           :rank=>1,
           :tie=>false,
           :school_name=>"Georgetown University",
@@ -28,14 +21,15 @@ RSpec.describe UsNewsRankings::Education::GraduateSchools::LawClinical::Category
     end
 
     describe "for 2016" do
-      let(:category){ described_class.new(2016) }
+      let(:category){ UsNewsRankings::Education::GraduateSchools::LawClinical::Category.new }
+      let(:annual_list){ described_class.new(category: category, year: 2016) }
 
       it "should return a list of ranked schools" do
-        expect(category.rankings.count).to eql(11)
+        expect(annual_list.rankings.count).to eql(11)
       end
 
       it "should contain the expected rankings" do
-        expect(category.rankings.first).to eql({
+        expect(annual_list.rankings.first).to eql({
           :rank=>1,
           :tie=>false,
           :school_name=>"Georgetown University",
@@ -47,14 +41,15 @@ RSpec.describe UsNewsRankings::Education::GraduateSchools::LawClinical::Category
     end
 
     describe "for 2015" do
-      let(:category){ described_class.new(2015) }
+      let(:category){ UsNewsRankings::Education::GraduateSchools::LawClinical::Category.new }
+      let(:annual_list){ described_class.new(category: category, year: 2015) }
 
       it "should return a list of ranked schools" do
-        expect(category.rankings.count).to eql(12)
+        expect(annual_list.rankings.count).to eql(12)
       end
 
       it "should contain the expected rankings" do
-        expect(category.rankings.first).to eql({
+        expect(annual_list.rankings.first).to eql({
           :rank=>1,
           :tie=>false,
           :school_name=>"Georgetown University",
@@ -66,14 +61,15 @@ RSpec.describe UsNewsRankings::Education::GraduateSchools::LawClinical::Category
     end
 
     describe "for 2014" do
-      let(:category){ described_class.new(2014) }
+      let(:category){ UsNewsRankings::Education::GraduateSchools::LawClinical::Category.new }
+      let(:annual_list){ described_class.new(category: category, year: 2014) }
 
       it "should return a list of ranked schools" do
-        expect(category.rankings.count).to eql(11)
+        expect(annual_list.rankings.count).to eql(11)
       end
 
       it "should contain the expected rankings" do
-        expect(category.rankings.first).to eql({
+        expect(annual_list.rankings.first).to eql({
           :rank=>1,
           :tie=>false,
           :school_name=>"Georgetown University",
@@ -85,14 +81,15 @@ RSpec.describe UsNewsRankings::Education::GraduateSchools::LawClinical::Category
     end
 
     describe "for 2013" do
-      let(:category){ described_class.new(2013) }
+      let(:category){ UsNewsRankings::Education::GraduateSchools::LawClinical::Category.new }
+      let(:annual_list){ described_class.new(category: category, year: 2013) }
 
       it "should return a list of ranked schools" do
-        expect(category.rankings.count).to eql(11)
+        expect(annual_list.rankings.count).to eql(11)
       end
 
       it "should contain the expected rankings" do
-        expect(category.rankings.first).to eql({
+        expect(annual_list.rankings.first).to eql({
           :rank=>1,
           :tie=>false,
           :school_name=>"Georgetown University",
@@ -104,14 +101,15 @@ RSpec.describe UsNewsRankings::Education::GraduateSchools::LawClinical::Category
     end
 
     describe "for 2012" do
-      let(:category){ described_class.new(2012) }
+      let(:category){ UsNewsRankings::Education::GraduateSchools::LawClinical::Category.new }
+      let(:annual_list){ described_class.new(category: category, year: 2012) }
 
       it "should return a list of ranked schools" do
-        expect(category.rankings.count).to eql(11)
+        expect(annual_list.rankings.count).to eql(11)
       end
 
       it "should contain the expected rankings" do
-        expect(category.rankings.first).to eql({
+        expect(annual_list.rankings.first).to eql({
           :rank=>1,
           :tie=>false,
           :school_name=>"Georgetown University",

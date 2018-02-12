@@ -4,21 +4,23 @@ require 'open-uri'
 
 module UsNewsRankings
   class Page
-    attr_reader :category, :url, :number
+    attr_reader :annual_list, :url, :number
 
+    # @param annual_list [UsNewsRankings::AnnualList] a combination of rankings category and rankings year
     # @param url [String] the page's source url
-    def initialize(category:, url:, number:)
-      @category = category
+    # @param number [Integer] the page's sequence within that year's list (e.g. 1, 2, 3, 4, etc.)
+    def initialize(annual_list:, url:, number:)
+      @annual_list = annual_list
       @url = url
       @number = number
     end
 
     def html_filepath
-      File.join(category.html_dir, "page#{number}.html")
+      File.join(annual_list.html_dir, "page#{number}.html")
     end
 
     def download_document
-      FileUtils.mkdir_p(category.html_dir)
+      FileUtils.mkdir_p(annual_list.html_dir)
       File.open(html_filepath, 'w') do |file|
         file.write(url_source.to_xhtml(indent: 2)) # file.write(table.to_xhtml(indent: 2))
       end

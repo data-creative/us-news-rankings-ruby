@@ -1,7 +1,7 @@
 RSpec.describe UsNewsRankings::Ranking do
   describe "#ranked?" do
-    let(:ranking){ described_class.new(year: nil, row:nil) }
-    let(:nonranking){ described_class.new(year: nil, row:nil) }
+    let(:ranking){ described_class.new(annual_list: nil, row:nil) }
+    let(:nonranking){ described_class.new(annual_list: nil, row:nil) }
 
     before(:each) do
       allow(ranking).to receive(:rank).and_return(125)
@@ -15,7 +15,7 @@ RSpec.describe UsNewsRankings::Ranking do
   end
 
   describe "instance methods expected to be defined in the child class" do
-    let(:ranking){ described_class.new(year: nil, row:nil) }
+    let(:ranking){ described_class.new(annual_list: nil, row:nil) }
 
     describe "#rank" do
       it "should raise an error" do

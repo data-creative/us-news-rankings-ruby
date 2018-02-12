@@ -2,13 +2,17 @@ require 'active_support/core_ext/object/try'
 
 module UsNewsRankings
   class Ranking
-    attr_reader :year, :row
+    attr_reader :annual_list, :row
 
-    # @param year [Integer] the ranking's page source
+    # @param annual_list [UsNewsRankings::AnnualList]
     # @param row [Nokogiri::XML::Element] a rankings table row ("tr") element
-    def initialize(year:, row:)
-      @year = year
+    def initialize(annual_list:, row:)
+      @annual_list = annual_list
       @row = row
+    end
+
+    def year
+      annual_list.year
     end
 
     def rank
