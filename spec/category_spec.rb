@@ -8,10 +8,10 @@ RSpec.describe UsNewsRankings::Category do
   end
 
   describe "#html_dir" do
-    let(:category){ described_class.new(2017) }
+    let(:category){ UsNewsRankings::Education::GraduateSchools::LawClinical::Category.new(2017) }
 
-    it "should be implemented in a child class" do
-      expect{category.html_dir}.to raise_error("Oh, please implement #html_dir on the child class.")
+    it "should combine the category namespace with the rankings year" do
+      expect(category.html_dir).to eql("./web/education/graduate_schools/law_clinical/2017")
     end
   end
 end

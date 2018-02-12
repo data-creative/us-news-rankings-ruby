@@ -12,8 +12,14 @@ module UsNewsRankings
       raise "Oh, please implement #source_urls on the child class."
     end
 
+    # it should transform UsNewsRankings::Education::GraduateSchools::LawClinical::Category
+    # ... into "education/graduate_schools/law_clinical"
+    def namespace_path
+      self.class.to_s.deconstantize.gsub("UsNewsRankings::","").split("::").map{|str| str.underscore}.join("/")
+    end
+
     def html_dir
-      raise "Oh, please implement #html_dir on the child class."
+      File.join("./web/#{namespace_path}", year.to_s)
     end
 
     def pages

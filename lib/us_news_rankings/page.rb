@@ -13,16 +13,12 @@ module UsNewsRankings
       @number = number
     end
 
-    def html_dir
-      File.join(category.html_dir, category.year.to_s)
-    end
-
     def html_filepath
-      File.join(html_dir, "page#{number}.html")
+      File.join(category.html_dir, "page#{number}.html")
     end
 
     def download_document
-      FileUtils.mkdir_p(html_dir)
+      FileUtils.mkdir_p(category.html_dir)
       File.open(html_filepath, 'w') do |file|
         file.write(url_source.to_xhtml(indent: 2)) # file.write(table.to_xhtml(indent: 2))
       end

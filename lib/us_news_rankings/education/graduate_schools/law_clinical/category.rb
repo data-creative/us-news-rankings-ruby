@@ -15,10 +15,6 @@ module UsNewsRankings
           def source_urls
             SOURCE_URLS[year]
           end
-
-          def html_dir
-            "./web/education/graduate_schools/law_clinical"
-          end
         end
       end
     end
