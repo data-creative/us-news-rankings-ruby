@@ -2,15 +2,17 @@ require 'active_support/core_ext/object/try'
 
 module UsNewsRankings
   class Ranking
-    attr_reader :row
+    attr_reader :year, :row
 
+    # @param year [Integer] the rankings year
     # @param row [Nokogiri::XML::Element] a rankings table row ("tr") element
-    def initialize(row)
+    def initialize(year:, row:)
+      @year = year
       @row = row
     end
 
     def rank
-      @rank || row.at_css(".rankscore-bronze").text.strip.gsub("#","").gsub("Tie","")
+      raise "Oh, please implement #rank on the child class."
     end
 
     def ranked?
@@ -29,7 +31,7 @@ module UsNewsRankings
     end
 
     def tie
-      row.at_css(".rankscore-bronze").text.include?("Tie")
+      raise "Oh, please implement #tie on the child class."
     end
 
     def to_h

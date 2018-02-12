@@ -15,10 +15,10 @@ module UsNewsRankings
     end
 
     def pages
-      source_urls.each_with_index.map{|url, number| UsNewsRankings::Page.new({
+      source_urls.each_with_index.map{|url, i| UsNewsRankings::Page.new({
         category: self,
         url: url,
-        number: number + 1
+        number: i + 1
       })}
     end
 
@@ -31,7 +31,10 @@ module UsNewsRankings
       extracted_rankings = []
       pages.each do |page|
         page.table_rows.each do |row|
-          ranking = UsNewsRankings::Education::GraduateSchools::LawClinical::Ranking.new(row)
+          ranking = UsNewsRankings::Education::GraduateSchools::LawClinical::Ranking.new({
+            year: year,
+            row: row
+          })
           extracted_rankings << ranking.to_h if ranking.ranked?
         end
       end
