@@ -1,3 +1,5 @@
+require 'active_support/core_ext/object/try'
+
 module UsNewsRankings
   class Ranking
     attr_reader :row
@@ -5,6 +7,15 @@ module UsNewsRankings
     # @param row [Nokogiri::XML::Element] a rankings table row ("tr") element
     def initialize(row)
       @row = row
+    end
+
+    def rank
+      @rank || row.at_css(".rankscore-bronze").text.strip.gsub("#","").gsub("Tie","")
+    end
+
+    def ranked?
+      return true if rank.to_i > 0
+      return false
     end
 
     # converts weird dash character (#8212) to normal dash, then removes weird characters like <U+200B>
@@ -17,17 +28,12 @@ module UsNewsRankings
       row.at_css(".location").try(:text).try(:strip) # Rutgers doesn't list a location
     end
 
-    def rank
-      @rank || row.at_css(".rankscore-bronze").text.strip.gsub("#","").gsub("Tie","")
-    end
-
-    def ranked?
-      return true if rank.to_i > 0
-      return false
-    end
-
     def tie
       row.at_css(".rankscore-bronze").text.include?("Tie")
+    end
+
+    def to_h
+      raise "Oh, please implement #to_h in the child class"
     end
   end
 end

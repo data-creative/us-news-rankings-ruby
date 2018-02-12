@@ -26,15 +26,14 @@ module UsNewsRankings
           end
 
           def extract_rankings
-            #extracted_rankings = []
-            #pages.each do |page|
-            #  page.table_rows.each do |row|
-            #    ranking = UsNewsRankings::Education::GraduateSchools::LawClinical::Ranking.new(row)
-            #    extracted_rankings << ranking.to_h if ranking.ranked?
-            #  end
-            #end
-            #return extracted_rankings
-            return [{}, {}, {}]
+            extracted_rankings = []
+            pages.each do |page|
+              page.table_rows.each do |row|
+                ranking = UsNewsRankings::Education::GraduateSchools::LawClinical::Ranking.new(row)
+                extracted_rankings << ranking.to_h if ranking.ranked?
+              end
+            end
+            return extracted_rankings
           end
         end
       end

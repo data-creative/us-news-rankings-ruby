@@ -1,4 +1,6 @@
-require "nokogiri"
+require 'active_support/core_ext/object/blank'
+require 'nokogiri'
+require 'open-uri'
 
 module UsNewsRankings
   class Page
