@@ -16,24 +16,8 @@ module UsNewsRankings
             SOURCE_URLS[year]
           end
 
-          def pages
-            source_urls.map{|url| UsNewsRankings::Page.new(url) }
-          end
-
-          # @example [{school_name: "abc", rank: 1}, {school_name: "def", rank: 2}, {school_name: "xyz", rank: 3}]
-          def rankings
-            @rankings || extract_rankings.sort_by{|ranking| ranking[:rank].to_i }
-          end
-
-          def extract_rankings
-            extracted_rankings = []
-            pages.each do |page|
-              page.table_rows.each do |row|
-                ranking = UsNewsRankings::Education::GraduateSchools::LawClinical::Ranking.new(row)
-                extracted_rankings << ranking.to_h if ranking.ranked?
-              end
-            end
-            return extracted_rankings
+          def html_dir
+            "./web/education/graduate_schools/law_clinical"
           end
         end
       end
