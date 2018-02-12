@@ -1,3 +1,5 @@
+require "active_support/inflector"
+
 module UsNewsRankings
   class Category
     attr_reader :year
@@ -15,11 +17,7 @@ module UsNewsRankings
     end
 
     def pages
-      source_urls.each_with_index.map{|url, i| UsNewsRankings::Page.new({
-        category: self,
-        url: url,
-        number: i + 1
-      })}
+      source_urls.each_with_index.map{|url, i| UsNewsRankings::Page.new({category: self, url: url, number: i + 1})}
     end
 
     # @example [{school_name: "abc", rank: 1}, {school_name: "def", rank: 2}, {school_name: "xyz", rank: 3}]
@@ -31,10 +29,7 @@ module UsNewsRankings
       extracted_rankings = []
       pages.each do |page|
         page.table_rows.each do |row|
-          ranking = UsNewsRankings::Education::GraduateSchools::LawClinical::Ranking.new({
-            year: year,
-            row: row
-          })
+          ranking = "#{self.class.to_s.deconstantize}::Ranking".constantize.new({year: year, row: row})
           extracted_rankings << ranking.to_h if ranking.ranked?
         end
       end

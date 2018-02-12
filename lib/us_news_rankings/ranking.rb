@@ -4,7 +4,7 @@ module UsNewsRankings
   class Ranking
     attr_reader :year, :row
 
-    # @param year [Integer] the rankings year
+    # @param year [Integer] the ranking's page source
     # @param row [Nokogiri::XML::Element] a rankings table row ("tr") element
     def initialize(year:, row:)
       @year = year
@@ -12,7 +12,7 @@ module UsNewsRankings
     end
 
     def rank
-      raise "Oh, please implement #rank on the child class."
+      raise "Oh, please implement #rank in the child class."
     end
 
     def ranked?
@@ -30,12 +30,12 @@ module UsNewsRankings
       row.at_css(".location").try(:text).try(:strip) # Rutgers doesn't list a location
     end
 
-    def tie
-      raise "Oh, please implement #tie on the child class."
+    def tie?
+      raise "Oh, please implement #tie? in the child class."
     end
 
     def to_h
-      raise "Oh, please implement #to_h in the child class"
+      raise "Oh, please implement #to_h in the child class."
     end
   end
 end
