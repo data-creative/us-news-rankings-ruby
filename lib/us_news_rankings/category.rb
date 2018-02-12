@@ -1,5 +1,7 @@
 module UsNewsRankings
   class Category
+    attr_reader :year
+
     def initialize(year)
       @year = year
     end
