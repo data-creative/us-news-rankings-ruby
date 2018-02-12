@@ -2,13 +2,6 @@ module UsNewsRankings
   class Client
     attr_reader :category, :year
 
-    # A white list of accepted/valid rankings categories.
-    CATEGORIES = [
-      "education/graduate_schools/law",
-      "education/graduate_schools/law_clinical",
-      "education/graduate_schools/law_part_time",
-    ]
-
     # @param category [String] one of the rankings categories
     # @param year [Integer] the rankings year
     def initialize(category:, year:)
@@ -16,14 +9,21 @@ module UsNewsRankings
       @year = year
     end
 
-    def validates_category
-      raise InvalidCategory, category unless category_valid?
+    def rankings
+      [{}, {}, {}]
     end
 
-    def category_valid?
-      CATEGORIES.include?(category)
-    end
+    # A white list of accepted/valid rankings categories.
+    CATEGORIES = [
+      "education/graduate_schools/law",
+      "education/graduate_schools/law_clinical",
+      "education/graduate_schools/law_part_time",
+    ]
 
     class InvalidCategory < StandardError ; end
+
+    def validates_category
+      raise InvalidCategory, category unless CATEGORIES.include?(category)
+    end
   end
 end

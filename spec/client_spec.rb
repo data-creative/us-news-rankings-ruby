@@ -8,4 +8,12 @@ RSpec.describe UsNewsRankings::Client do
       expect{invalid_client.validates_category}.to raise_error(described_class::InvalidCategory)
     end
   end
+
+  describe "#rankings" do
+    let(:client){ described_class.new(category: "education/graduate_schools/law", year: 2017) }
+
+    it "returns a corresponding list of ranked schools" do
+      expect(client.rankings).to_not be_empty
+    end
+  end
 end
