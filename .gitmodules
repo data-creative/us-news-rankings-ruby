@@ -1,3 +1,0 @@
-[submodule "web/rankings"]
-	path = web/rankings
-	url = git@github.com:data-creative/us-news-rankings-archive.git
