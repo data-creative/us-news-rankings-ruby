@@ -2,7 +2,6 @@ require "pry"
 
 require "us_news_rankings/client"
 require "us_news_rankings/category"
-require "us_news_rankings/category_awareness"
 require "us_news_rankings/annual_list"
 require "us_news_rankings/page"
 require "us_news_rankings/ranking"

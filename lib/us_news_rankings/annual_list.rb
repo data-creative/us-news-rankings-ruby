@@ -2,11 +2,14 @@ require "active_support/inflector"
 
 module UsNewsRankings
   class AnnualList
-    attr_reader :category, :year
+    attr_reader :year
 
-    def initialize(category:, year:)
-      @category = category
+    def initialize(year)
       @year = year
+    end
+
+    def category
+      self.class.name.gsub("AnnualList","Category").constantize.new
     end
 
     def html_dir
