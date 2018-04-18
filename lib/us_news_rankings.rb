@@ -16,6 +16,8 @@ require "us_news_rankings/page"
 
 require "us_news_rankings/ranking"
 require "us_news_rankings/education/graduate_schools/law_clinical/ranking"
+#require "us_news_rankings/education/graduate_schools/law_part_time/ranking"
+require "us_news_rankings/education/graduate_schools/law/ranking"
 
 require "us_news_rankings/version"
 
