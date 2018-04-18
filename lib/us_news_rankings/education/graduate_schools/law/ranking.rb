@@ -4,13 +4,13 @@ module UsNewsRankings
       module Law
         class Ranking < UsNewsRankings::Ranking
           def rank_selector
-            #case year
-            #when 2014, 2013, 2012
-            #  return ".rankings-score"
-            #else
-            #  return ".rankscore-bronze"
-            #end
-            ".rankscore-bronze"
+            case year
+            when 2013, 2012, 2011
+              return ".rankings-score"
+            else
+              return ".rankscore-bronze"
+            end
+
           end
 
           def rank
