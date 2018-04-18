@@ -69,7 +69,7 @@ module UsNewsRankings
               school_name: school_name,
               school_city: school_city,
               score: score,
-              peer_score: peer_score, # out of 5
+              peer_score: peer_score,
               lsat_25th: lsat_25th,
               lsat_75th: lsat_75th,
               acceptance_rate: acceptance_rate,

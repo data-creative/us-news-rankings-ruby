@@ -16,7 +16,7 @@ RSpec.describe UsNewsRankings::Education::GraduateSchools::LawPartTime::AnnualLi
           :school_name=>"Georgetown University",
           :school_city=>"Washington, DC",
           :score=>"100",
-          :peer_score=>"4.2", # out of 5
+          :peer_score=>"4.2",
           :lsat_25th=>"157",
           :lsat_75th=>"167",
           :acceptance_rate=>"6%",
@@ -39,7 +39,7 @@ RSpec.describe UsNewsRankings::Education::GraduateSchools::LawPartTime::AnnualLi
           :school_name=>"Georgetown University",
           :school_city=>"Washington, DC",
           :score=>"100",
-          :peer_score=>"4.2", # out of 5
+          :peer_score=>"4.2",
           :lsat_25th=>"157",
           :lsat_75th=>"168",
           :acceptance_rate=>"5.8%",
@@ -52,7 +52,8 @@ RSpec.describe UsNewsRankings::Education::GraduateSchools::LawPartTime::AnnualLi
       let(:year){ 2016 }
 
       it "should return a list of ranked schools" do
-        expect(annual_list.rankings.count).to eql(25)
+        expect(annual_list.rankings.count).to eql(64)
+        expect(annual_list.pages.count).to eql(3)
       end
 
       it "should contain the expected rankings" do
@@ -62,11 +63,37 @@ RSpec.describe UsNewsRankings::Education::GraduateSchools::LawPartTime::AnnualLi
           :school_name=>"Georgetown University",
           :school_city=>"Washington, DC",
           :score=>"100",
-          :peer_score=>"4.1", # out of 5
+          :peer_score=>"4.1",
           :lsat_25th=>"160",
           :lsat_75th=>"167",
           :acceptance_rate=>"5.1%",
           :enrollment=>"241"
+        })
+
+        expect(annual_list.rankings[25]).to eql({
+          :rank=>25,
+          :tie=>true,
+          :school_name=>"St. Louis University",
+          :school_city=>"St. Louis, MO",
+          :score=>"48",
+          :peer_score=>"2.4",
+          :lsat_25th=>"148",
+          :lsat_75th=>"157",
+          :acceptance_rate=>"57.5%",
+          :enrollment=>"77"
+        })
+
+        expect(annual_list.rankings[50]).to eql({
+          :rank=>50,
+          :tie=>true,
+          :school_name=>"Widener University",
+          :school_city=>"Wilmington, DE",
+          :score=>"30",
+          :peer_score=>"1.7",
+          :lsat_25th=>"147",
+          :lsat_75th=>"151",
+          :acceptance_rate=>"44.1%",
+          :enrollment=>"139"
         })
       end
     end
@@ -85,7 +112,7 @@ RSpec.describe UsNewsRankings::Education::GraduateSchools::LawPartTime::AnnualLi
           :school_name=>"Georgetown University",
           :school_city=>"Washington, DC",
           :score=>"100",
-          :peer_score=>"4.0", # out of 5
+          :peer_score=>"4.0",
           :lsat_25th=>"160",
           :lsat_75th=>"168",
           :acceptance_rate=>"4.9%",
@@ -154,7 +181,7 @@ RSpec.describe UsNewsRankings::Education::GraduateSchools::LawPartTime::AnnualLi
           :school_name=>"Georgetown University",
           :school_city=>"Washington, DC",
           :score=>"100",
-          :peer_score=>"4.3", # out of 5
+          :peer_score=>"4.3",
           :lsat_25th=>"163",
           :lsat_75th=>"170",
           :acceptance_rate=>"7.8%",
