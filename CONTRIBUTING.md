@@ -31,19 +31,11 @@ bin/console
 
 ### Updating Rankings Data
 
-1. Download HTML files into the [archives repo](https://github.com/data-creative/us-news-rankings-archive).
+To download new HTML tables of rankings data to the **/web** directory:
 
-2. Transform source HTML into table elements:
-
-```sh
-bundle exec rake extract_tables
-```
-
-2. Transform source HTML into machine-readable data in JSON and CSV format:
-
-```sh
-bundle exec rake transform_tables
-```
+  1. Add ranking data source url(s) to the appropriate `category.rb` file.
+  2. Add a corresponding entry into the appropriate `annual_list_spec.rb` test.
+  3. Run the tests. If parsing logic has changed, you may need to also update the appropriate `ranking.rb` file until tests pass.
 
 ## Testing
 
