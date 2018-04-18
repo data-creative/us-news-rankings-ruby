@@ -26,8 +26,8 @@ module UsNewsRankings
 
     # @example [{school_name: "abc", rank: 1}, {school_name: "def", rank: 2}, {school_name: "xyz", rank: 3}]
     def rankings
-      @rankings || extract_rankings.sort_by{|ranking| ranking[:rank].to_i }
-    end
+      @rankings || extract_rankings.sort_by{|ranking| [ranking[:rank].to_i, ranking[:school_name]] }
+    end # consider aggregating rankings from each page and allowing each page to recognize its own rankings
 
     def extract_rankings
       extracted_rankings = []

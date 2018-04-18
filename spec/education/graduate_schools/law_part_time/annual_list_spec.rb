@@ -6,7 +6,8 @@ RSpec.describe UsNewsRankings::Education::GraduateSchools::LawPartTime::AnnualLi
       let(:year){ 2018 }
 
       it "should return a list of ranked schools" do
-        expect(annual_list.rankings.count).to eql(25)
+        expect(annual_list.rankings.count).to eql(56)
+        expect(annual_list.pages.count).to eql(3)
       end
 
       it "should contain the expected rankings" do
@@ -22,6 +23,32 @@ RSpec.describe UsNewsRankings::Education::GraduateSchools::LawPartTime::AnnualLi
           :acceptance_rate=>"6%",
           :enrollment=>"232"
         })
+
+        expect(annual_list.rankings[25]).to eql({
+          :rank=>26,
+          :tie=>false,
+          :school_name=>"Marquette University",
+          :school_city=>"Milwaukee, WI",
+          :score=>"46",
+          :peer_score=>"2.4",
+          :lsat_25th=>"149",
+          :lsat_75th=>"156",
+          :acceptance_rate=>"26.3%",
+          :enrollment=>"57"
+        })
+
+        expect(annual_list.rankings[50]).to eql({
+          :rank=>50,
+          :tie=>true,
+          :school_name=>"South Texas College of Law Houston",
+          :school_city=>"Houston, TX",
+          :score=>"32",
+          :peer_score=>"1.9",
+          :lsat_25th=>"146",
+          :lsat_75th=>"151",
+          :acceptance_rate=>"55.6%",
+          :enrollment=>"210"
+        })
       end
     end
 
@@ -29,7 +56,8 @@ RSpec.describe UsNewsRankings::Education::GraduateSchools::LawPartTime::AnnualLi
       let(:year){ 2017 }
 
       it "should return a list of ranked schools" do
-        expect(annual_list.rankings.count).to eql(25)
+        expect(annual_list.rankings.count).to eql(62)
+        expect(annual_list.pages.count).to eql(3)
       end
 
       it "should contain the expected rankings" do
@@ -44,6 +72,32 @@ RSpec.describe UsNewsRankings::Education::GraduateSchools::LawPartTime::AnnualLi
           :lsat_75th=>"168",
           :acceptance_rate=>"5.8%",
           :enrollment=>"242"
+        })
+
+        expect(annual_list.rankings[25]).to eql({
+          :rank=>24,
+          :tie=>true,
+          :school_name=>"Stetson University",
+          :school_city=>"Gulfport, FL",
+          :score=>"46",
+          :peer_score=>"2.1",
+          :lsat_25th=>"150",
+          :lsat_75th=>"157",
+          :acceptance_rate=>"39.6%",
+          :enrollment=>"133"
+        })
+
+        expect(annual_list.rankings[50]).to eql({
+          :rank=>50,
+          :tie=>true,
+          :school_name=>"University of Akron",
+          :school_city=>"Akron, OH",
+          :score=>"33",
+          :peer_score=>"1.8",
+          :lsat_25th=>"149",
+          :lsat_75th=>"154",
+          :acceptance_rate=>"41.2%",
+          :enrollment=>"144"
         })
       end
     end
