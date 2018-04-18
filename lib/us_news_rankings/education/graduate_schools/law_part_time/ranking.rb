@@ -5,7 +5,7 @@ module UsNewsRankings
         class Ranking < UsNewsRankings::Ranking
           def rank_selector
             case year
-            when 2014, 2013, 2012
+            when 2013, 2012
               return ".rankings-score"
             else
               return ".rankscore-bronze"
