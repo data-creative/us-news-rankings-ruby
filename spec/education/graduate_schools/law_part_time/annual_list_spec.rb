@@ -1,7 +1,6 @@
 RSpec.describe UsNewsRankings::Education::GraduateSchools::LawPartTime::AnnualList do
   describe "#rankings" do
-    let(:category){ UsNewsRankings::Education::GraduateSchools::LawPartTime::Category.new }
-    let(:annual_list){ described_class.new(category: category, year: year) }
+    let(:annual_list){ described_class.new(year) }
 
     describe "for 2018" do
       let(:year){ 2018 }

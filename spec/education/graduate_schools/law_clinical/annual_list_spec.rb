@@ -1,9 +1,9 @@
 RSpec.describe UsNewsRankings::Education::GraduateSchools::LawClinical::AnnualList do
   describe "#rankings" do
+    let(:annual_list){ described_class.new(year) }
 
     describe "for 2018" do
-      let(:category){ UsNewsRankings::Education::GraduateSchools::LawClinical::Category.new }
-      let(:annual_list){ described_class.new(category: category, year: 2018) }
+      let(:year){ 2018 }
 
       it "should return a list of ranked schools" do
         expect(annual_list.rankings.count).to eql(12)
@@ -22,8 +22,7 @@ RSpec.describe UsNewsRankings::Education::GraduateSchools::LawClinical::AnnualLi
     end
 
     describe "for 2017" do
-      let(:category){ UsNewsRankings::Education::GraduateSchools::LawClinical::Category.new }
-      let(:annual_list){ described_class.new(category: category, year: 2017) }
+      let(:year){ 2017 }
 
       it "should return a list of ranked schools" do
         expect(annual_list.rankings.count).to eql(11)
@@ -42,8 +41,7 @@ RSpec.describe UsNewsRankings::Education::GraduateSchools::LawClinical::AnnualLi
     end
 
     describe "for 2016" do
-      let(:category){ UsNewsRankings::Education::GraduateSchools::LawClinical::Category.new }
-      let(:annual_list){ described_class.new(category: category, year: 2016) }
+      let(:year){ 2016 }
 
       it "should return a list of ranked schools" do
         expect(annual_list.rankings.count).to eql(11)
@@ -62,8 +60,7 @@ RSpec.describe UsNewsRankings::Education::GraduateSchools::LawClinical::AnnualLi
     end
 
     describe "for 2015" do
-      let(:category){ UsNewsRankings::Education::GraduateSchools::LawClinical::Category.new }
-      let(:annual_list){ described_class.new(category: category, year: 2015) }
+      let(:year){ 2015 }
 
       it "should return a list of ranked schools" do
         expect(annual_list.rankings.count).to eql(12)
@@ -82,8 +79,7 @@ RSpec.describe UsNewsRankings::Education::GraduateSchools::LawClinical::AnnualLi
     end
 
     describe "for 2014" do
-      let(:category){ UsNewsRankings::Education::GraduateSchools::LawClinical::Category.new }
-      let(:annual_list){ described_class.new(category: category, year: 2014) }
+      let(:year){ 2014 }
 
       it "should return a list of ranked schools" do
         expect(annual_list.rankings.count).to eql(11)
@@ -102,8 +98,7 @@ RSpec.describe UsNewsRankings::Education::GraduateSchools::LawClinical::AnnualLi
     end
 
     describe "for 2013" do
-      let(:category){ UsNewsRankings::Education::GraduateSchools::LawClinical::Category.new }
-      let(:annual_list){ described_class.new(category: category, year: 2013) }
+      let(:year){ 2013 }
 
       it "should return a list of ranked schools" do
         expect(annual_list.rankings.count).to eql(11)
@@ -122,8 +117,7 @@ RSpec.describe UsNewsRankings::Education::GraduateSchools::LawClinical::AnnualLi
     end
 
     describe "for 2012" do
-      let(:category){ UsNewsRankings::Education::GraduateSchools::LawClinical::Category.new }
-      let(:annual_list){ described_class.new(category: category, year: 2012) }
+      let(:year){ 2012 }
 
       it "should return a list of ranked schools" do
         expect(annual_list.rankings.count).to eql(11)
