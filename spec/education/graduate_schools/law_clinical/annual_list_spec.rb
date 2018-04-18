@@ -1,5 +1,26 @@
 RSpec.describe UsNewsRankings::Education::GraduateSchools::LawClinical::AnnualList do
   describe "#rankings" do
+
+    describe "for 2018" do
+      let(:category){ UsNewsRankings::Education::GraduateSchools::LawClinical::Category.new }
+      let(:annual_list){ described_class.new(category: category, year: 2018) }
+
+      it "should return a list of ranked schools" do
+        expect(annual_list.rankings.count).to eql(12)
+      end
+
+      it "should contain the expected rankings" do
+        expect(annual_list.rankings.first).to eql({
+          :rank=>1,
+          :tie=>false,
+          :school_name=>"Georgetown University",
+          :school_city=>"Washington, DC",
+          :tuition=>"$59,850 (full-time)",
+          :enrollment=>"1,749"
+        })
+      end
+    end
+
     describe "for 2017" do
       let(:category){ UsNewsRankings::Education::GraduateSchools::LawClinical::Category.new }
       let(:annual_list){ described_class.new(category: category, year: 2017) }

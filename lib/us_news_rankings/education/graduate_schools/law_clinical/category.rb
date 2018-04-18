@@ -5,6 +5,7 @@ module UsNewsRankings
         class Category < UsNewsRankings::Category
           def source_urls
             return {
+              2018 => ["https://web.archive.org/web/20180416075230/https://www.usnews.com/best-graduate-schools/top-law-schools/clinical-training-rankings"],
               2017 => ["https://web.archive.org/web/20171230030145/https://www.usnews.com/best-graduate-schools/top-law-schools/clinical-training-rankings"],
               2016 => ["https://web.archive.org/web/20161024174100/http://grad-schools.usnews.rankingsandreviews.com/best-graduate-schools/top-law-schools/clinical-training-rankings"],
               2015 => ["https://web.archive.org/web/20150626162959/http://grad-schools.usnews.rankingsandreviews.com/best-graduate-schools/top-law-schools/clinical-training-rankings"],
