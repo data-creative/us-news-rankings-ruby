@@ -22,12 +22,6 @@ Or install it yourself as:
 
 ## Usage
 
-### Client-side
-
-Feel free to make client-side requests to the raw JSON or CSV data (e.g. _____________). Thanks to GitHub for hosting.
-
-### Server-side
-
 ```rb
 UsNewsRankings::Education::GraduateSchools::Law::AnnualList.new(2017).rankings
 #> [{}, {}, {}]

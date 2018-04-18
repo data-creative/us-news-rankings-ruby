@@ -3,6 +3,7 @@
 ## Technologies
 
   + [Ruby - get all files in subdirectories](https://stackoverflow.com/a/7182053/670433)
+  + [ActiveSupport Concerns](http://api.rubyonrails.org/v5.1/classes/ActiveSupport/Concern.html)
 
 ## US News Rankings
 
