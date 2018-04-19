@@ -12,12 +12,20 @@ module UsNewsRankings
             end
           end
 
+          def unranked_selector
+            ".rankings-score-rnp"
+          end
+
+          def rank_td
+            @rank_td || row.at_css(rank_selector) || row.at_css(unranked_selector)
+          end
+
           def rank
-            @rank || row.at_css(rank_selector).text.strip.gsub("#","").gsub("Tie","")
+            @rank || rank_td.text.strip.gsub("#","").gsub("Tie","")
           end
 
           def tie?
-            row.at_css(rank_selector).text.include?("Tie")
+            rank_td.text.include?("Tie")
           end
 
           def school_name
