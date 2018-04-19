@@ -3,6 +3,8 @@
 ## Technologies
 
   + [Ruby - get all files in subdirectories](https://stackoverflow.com/a/7182053/670433)
+  + [ActiveSupport Concerns](http://api.rubyonrails.org/v5.1/classes/ActiveSupport/Concern.html)
+  + [Ruby - sorting an array by two attributes](https://www.ruby-forum.com/topic/162413)
 
 ## US News Rankings
 
